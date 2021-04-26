@@ -1,0 +1,12 @@
+def HanoiTower(n, origin, dest, extra):
+    if n != 1:
+        HanoiTower(n - 1, origin, extra, dest)
+        print("снять кольцо", n, "со стержня", origin, "на стержень", dest)
+        HanoiTower(n - 1, extra, dest, origin)
+    else:
+        print("снять кольцо 1 со стержня", origin, "на стержень", dest)
+        return
+
+n = int(input("введите количество звонков: ")) #input the number of rings
+#n = 4
+HanoiTower(n, 'a', 'b', 'c')
